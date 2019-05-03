@@ -3,7 +3,6 @@ import Splash from './components/splash/splash.js';
 import Header from './components/header/header.js';
 import Content from './components/content/content.js';
 import { grabHomeworld, grabSpecies, grabResidents } from './apiCalls.js'
-import './App.css';
 
 class App extends Component {
   constructor() {
@@ -43,7 +42,7 @@ class App extends Component {
       .then(homeworld => grabHomeworld(homeworld.results))
       .then(species => grabSpecies(species))
       .then(results => this.setState( ({ data }) => {
-       data.People = results
+        data.People = results
         return data
       } ))
 

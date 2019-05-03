@@ -1,3 +1,8 @@
+export const grabFilms = () => {
+  fetch('https://swapi.co/api/films')
+    .then(response => response.json())
+}
+
 export const grabHomeworld = (people) => {
   let unresolvedPromises = people.map((person) => {
     return fetch(person.homeworld)
@@ -21,18 +26,17 @@ export const grabResidents = (planets) => {
 
     return unresolvedPromise2(planet.residents).then(residents => ({
       ...planet, residents }))
-    // return Promise.all(unresolvedPromise2)
   })
   return Promise.all(unresolvedPromises)
 }
 
 
-  const unresolvedPromise2 = (residents) => {
-    const promises = residents.map((resident) => {
-      console.log(resident)
-      return fetch(resident)
-      .then(response => response.json())
-      .then(data => data.name)
-    })
-    return Promise.all(promises)
-  } 
+const unresolvedPromise2 = (residents) => {
+  const promises = residents.map((resident) => {
+    console.log(resident)
+    return fetch(resident)
+    .then(response => response.json())
+    .then(data => data.name)
+  })
+  return Promise.all(promises)
+} 
