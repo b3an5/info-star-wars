@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Splash from './components/splash/splash.js';
 import Header from './components/header/header.js';
 import Content from './components/content/content.js';
-import { grabHomeworld, grabSpecies } from './apiCalls.js'
+import { grabHomeworld, grabSpecies, grabResidents } from './apiCalls.js'
 import './App.css';
 
 class App extends Component {
@@ -56,8 +56,9 @@ class App extends Component {
 
     fetch('https://swapi.co/api/planets')
     .then(response => response.json())
+    .then(planets => grabResidents(planets.results))
     .then(results => this.setState(({ data }) => {
-      data.Planets = results.results
+      data.Planets = results
       return data
     }))
   }

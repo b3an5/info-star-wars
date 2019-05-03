@@ -15,3 +15,24 @@ export const grabSpecies = (people) => {
   })
   return Promise.all(unresolvedPromises)
 }
+
+export const grabResidents = (planets) => {
+  const unresolvedPromises = planets.map((planet) => {
+
+    return unresolvedPromise2(planet.residents).then(residents => ({
+      ...planet, residents }))
+    // return Promise.all(unresolvedPromise2)
+  })
+  return Promise.all(unresolvedPromises)
+}
+
+
+  const unresolvedPromise2 = (residents) => {
+    const promises = residents.map((resident) => {
+      console.log(resident)
+      return fetch(resident)
+      .then(response => response.json())
+      .then(data => data.name)
+    })
+    return Promise.all(promises)
+  } 
