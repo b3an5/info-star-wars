@@ -1,6 +1,6 @@
 # INFOstarWARS
 
-#### A web-based reference for starwars styled to parody infowars. in no way shape or form is this an endorsement of Infowars.com
+#### A web-based reference for starwars styled to parody infowars. In no way shape or form is this an endorsement of Infowars.com
 
 ### Installation Steps
 
