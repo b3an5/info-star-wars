@@ -1,5 +1,6 @@
 import React from 'react'
 import Controls from '../controls/controls.js'
+import PropTypes from 'prop-types'
 
 export default function Header(props) {
   if(!props.splash) {
@@ -18,4 +19,9 @@ export default function Header(props) {
       </div>
     )
   }
+}
+
+Header.propTypes = {
+  splash: PropTypes.bool,
+  switchCardCat: PropTypes.func
 }

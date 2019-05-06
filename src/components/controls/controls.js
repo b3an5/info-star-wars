@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
 
-export default class Contols extends Component {
-  constructor() {
-    super();
-    // this.state = {
-    //   peopleButton: 'on',
-    //   vehiclesButton: 'off',
-    //   planetsButton: 'off'
-    // }
-  }
+export default function Controls(props) {
+  return(
+    <div>
+      <button onClick={props.switchCardCat}>People</button>
+      <button onClick={props.switchCardCat}>Vehicles</button>
+      <button onClick={props.switchCardCat}>Planets</button>
+    </div>
+  )
+}
 
-  render() {
-    return(
-      <div>
-        <button onClick={this.props.switchCardCat}>People</button>
-        <button onClick={this.props.switchCardCat}>Vehicles</button>
-        <button onClick={this.props.switchCardCat}>Planets</button>
-      </div>
-    )
-  }
+Controls.propTypes = {
+  switchCardCat: PropTypes.func
 }
