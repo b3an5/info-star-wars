@@ -43,6 +43,5 @@ export default function Card(props) {
 
 Card.propTypes = {
   category: PropTypes.object,
-  categoryName: PropTypes.string,
-  key: PropTypes.number
+  categoryName: PropTypes.string
 }
