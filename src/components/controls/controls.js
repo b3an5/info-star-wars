@@ -1,12 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import '../../scss/main.scss';
 
 export default function Controls(props) {
   return(
-    <div>
-      <button onClick={props.switchCardCat}>People</button>
-      <button onClick={props.switchCardCat}>Vehicles</button>
-      <button onClick={props.switchCardCat}>Planets</button>
+    <div className='button-component'>
+      <button className='control-button' onClick={props.switchCardCat}>People</button>
+      <button className='control-button' onClick={props.switchCardCat}>Vehicles</button>
+      <button className='control-button' onClick={props.switchCardCat}>Planets</button>
     </div>
   )
 }

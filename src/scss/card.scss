@@ -1,0 +1,17 @@
+.card {
+  border-radius: 5px;
+  width: 30vw;
+  height: 30vh;
+  text-align: center;
+  background-color: white;
+  border: solid #ffd700 5px;
+  box-shadow: 2px 2px 8px 1px grey;
+  z-index: 3;
+  margin: 10px;
+  background-color: black;
+  color: #ffd700;
+}
+
+.small-card {
+  margin-top: 15px;
+}

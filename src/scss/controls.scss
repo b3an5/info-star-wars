@@ -1,0 +1,21 @@
+.control-button {
+  width: 200px;
+  color:grey;
+  border: none;
+  font-size: 2rem;
+  border-bottom: 5px solid transparent;
+  &:hover {
+    color: red;
+    cursor: pointer;
+    border-bottom: 5px solid red;
+  };
+  &:active {
+    color: red;
+  }
+}
+
+.button-component {
+  width: 100vw;
+  background-color: white;
+  border-bottom: 5px solid grey;
+}

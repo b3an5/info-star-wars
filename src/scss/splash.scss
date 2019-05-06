@@ -1,0 +1,45 @@
+.enter-button {
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  margin: 10px;
+  font-size: 2em;
+}
+.enter-button:focus {
+  outline: none;
+  opacity: .2;
+}
+
+.enter-button {
+  background-color: #ffd700;
+  border: 5px red;
+  transition: all .5s ease;
+  position: absolute;
+  top: 160px;
+  right: 80px;
+  &:before {
+    content: ' ';
+    border: 2px transparent solid;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    box-sizing: border-box;
+    width: 160px;
+    height: 60px;
+    transition: all .7s ease;
+  }
+}
+.enter-button:hover {
+  position: absolute;
+  top: 160px;
+  right: 80px;
+  background-color: rgba(#ffd700, .7);
+  color: red;
+  border-radius: 20px;
+  &:before {
+    border-radius: 20px;
+    border: 2px #ffd700 solid;
+  }
+}
