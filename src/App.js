@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Splash from './components/splash/splash.js';
 import Header from './components/header/header.js';
 import Content from './components/content/content.js';
-import { grabHomeworld, grabSpecies, grabResidents } from './apiCalls.js'
+import { grabHomeworld, grabSpecies, grabResidents, getFilms, getPeople, getVehicles, getPlanets } from './apiCalls.js'
 
 class App extends Component {
   constructor() {
@@ -26,8 +26,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://swapi.co/api/films')
-      .then(response => response.json())
+    getFilms()
       .then(data => {
         this.setState({
           film: data.results,
@@ -37,29 +36,26 @@ class App extends Component {
       })
       .catch(error => console.log(error));
 
-    fetch('https://swapi.co/api/people/')
-      .then(response => response.json())
-      .then(homeworld => grabHomeworld(homeworld.results))
-      .then(species => grabSpecies(species))
+    getPeople()
       .then(results => this.setState( ({ data }) => {
         data.People = results
         return data
       } ))
+      .catch(error => console.log(error))
 
-    fetch('https://swapi.co/api/vehicles')
-    .then(response => response.json())
+  getVehicles()
     .then(results => this.setState( ({ data }) => {
       data.Vehicles = results.results
       return data
     }))
+    .catch(error => console.log(error))
 
-    fetch('https://swapi.co/api/planets')
-    .then(response => response.json())
-    .then(planets => grabResidents(planets.results))
+  getPlanets()
     .then(results => this.setState(({ data }) => {
       data.Planets = results
       return data
     }))
+    .catch(error => console.log(error))
   }
 
   showMainPage = () => {
@@ -84,7 +80,7 @@ class App extends Component {
           />
           <Splash 
             film={this.state.film[this.state.randomFilm]}
-            splashButton = {this.showMainPage}
+            splashButton={this.showMainPage}
           />
         </div>
       )
@@ -92,6 +88,7 @@ class App extends Component {
       return (
         <div>
           <Header 
+            splash={this.state.splash}
             switchCardCat={this.switchCardCat}
           />
           <Content 

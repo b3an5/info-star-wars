@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app should match snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`app should match snapshot when splash is false 1`] = `ShallowWrapper {}`;
