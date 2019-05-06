@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function Card(props) {
   if(props.categoryName === 'People') {
@@ -37,4 +38,10 @@ export default function Card(props) {
       </div>
     )
   }
+}
+
+Card.propTypes = {
+  category: PropTypes.object,
+  categoryName: PropTypes.string,
+  key: PropTypes.number
 }

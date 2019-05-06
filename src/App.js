@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Splash from './components/splash/splash.js';
 import Header from './components/header/header.js';
 import Content from './components/content/content.js';
-import { grabHomeworld, grabSpecies, grabResidents, getFilms, getPeople, getVehicles, getPlanets } from './apiCalls.js'
+import { getFilms, getPeople, getVehicles, getPlanets } from './apiCalls.js'
 
 class App extends Component {
   constructor() {

@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../card/card.js'
+import PropTypes from 'prop-types'
 
 export default function Content(props) {
   return (
@@ -14,4 +15,9 @@ export default function Content(props) {
       )}
     </div>
   )
+}
+
+Content.propTypes = {
+  cardCategories: PropTypes.array,
+  categoryName: PropTypes.string
 }

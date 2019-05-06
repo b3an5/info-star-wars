@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
 
-export default function Contols(props) {
+export default function Controls(props) {
   return(
     <div>
       <button onClick={props.switchCardCat}>People</button>
@@ -8,4 +9,8 @@ export default function Contols(props) {
       <button onClick={props.switchCardCat}>Planets</button>
     </div>
   )
+}
+
+Controls.propTypes = {
+  switchCardCat: PropTypes.func
 }
