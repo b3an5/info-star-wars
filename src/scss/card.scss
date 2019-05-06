@@ -1,7 +1,7 @@
 .card {
   border-radius: 5px;
   width: 30vw;
-  height: 30vh;
+  height: 42vh;
   text-align: center;
   background-color: white;
   border: solid #ffd700 5px;
@@ -14,4 +14,8 @@
 
 .small-card {
   margin-top: 15px;
+}
+
+.card-pic {
+  height: 100px;
 }
