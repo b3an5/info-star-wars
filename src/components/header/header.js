@@ -7,7 +7,7 @@ export default function Header(props) {
   if(!props.splash) {
     return (
       <div className='header'>
-        <h1 className='header-title'>INFOstarWARS</h1>
+        <h1 className='header-title'><span className='info'>INFO</span>star<span className='wars'>WARS</span></h1>
         <Controls 
           switchCardCat={props.switchCardCat}
         />
